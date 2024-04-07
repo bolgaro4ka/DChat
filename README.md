@@ -1,6 +1,9 @@
 # DChat
 Django local chat. Only russian language
 
+## For what?
+So that you can exchange messages within the local network. 😐
+
 ## How to run the program:
 
  - Create venv:
@@ -11,6 +14,8 @@ Django local chat. Only russian language
 
  - Install requirements:
 ```pip install -r requirements.txt```
+
+Replace SECRET_KEY ABOBA in .env with your secret key!
 
  - Make migrations (db):
 ```python manage.py makemigrations```
@@ -26,4 +31,4 @@ Django local chat. Only russian language
 ![image](https://github.com/bolgaro4ka/DChat/assets/123888141/85e43082-78c7-447d-aa96-a88d70ed7a6e)
 ![image](https://github.com/bolgaro4ka/DChat/assets/123888141/8b552769-bc81-4126-aa50-26687efdc48d)
 
-## By bolgaro4ka
+## By [bolgaro4ka](https://github.com/bolgaro4ka)
