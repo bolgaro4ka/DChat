@@ -1,0 +1,227 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css");
+
+* {
+  font-family: "Open Sans", "sans-serif", "FontAwesome";
+  box-sizing: border-box;
+}
+body {
+  background: rgb(52, 56, 61);
+  height: 97vh;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.wrapper_normal {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3vh;
+  width: 100%;
+  color: #eee;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"] {
+  background: rgb(38, 39, 41);
+  border: 0;
+  outline: none;
+  width: 100%;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 10px 10px 5px;
+}
+
+button[type="submit"] {
+  background: rgb(52, 56, 61);
+  border: 0;
+  outline: none;
+  width: 103%;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 10px 10px 5px;
+}
+
+button[type="submit"]:hover {
+  background: rgb(38, 39, 41);
+  width: 103%;
+}
+
+form p[id="forSignIn"] {
+  color: #eee;
+  text-align: center;
+}
+
+#sendMessage {
+  background: rgb(52, 56, 61);
+  border: 0;
+  display: flex;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  position: fixed;
+  bottom: 1vh;
+  margin: 0;
+  left: 0;
+  align-items: center;
+  padding: 0px 10px;
+  height: 6vh;
+}
+
+#sendMessage input {
+  width: 80vw;
+  height: 4vh;
+  padding: 10px;
+}
+
+#sendMessage button {
+  width: 20vw;
+  height: 4vh;
+  font-size: 1.5vh;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+iframe {
+  width: 100%;
+  height: 84.5vh;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.message {
+  max-width: 500px;
+  background-color: rgb(38, 39, 41);
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  padding: 10px;
+  margin: 10px;
+  color: #bbbbbb;
+}
+
+.from_me {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 0px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+* {
+  scrollbar-color: rgb(52, 56, 61) rgb(38, 39, 41);
+}
+
+#theme {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  cursor: pointer;
+  background-color: rgb(52, 56, 61);
+  color: #eee;
+  border: none;
+}
+
+#theme:hover {
+  background-color: rgb(38, 39, 41);
+}
+
+@media screen and (max-width: 500px) {
+  #sendMessage button {
+    width: 40vw;
+  }
+
+  #sendMessage input {
+    width: 60vw;
+  }
+
+  .message p {
+    font-size: 2vh;
+  }
+
+  .message {
+    max-width: 200px;
+  }
+}
+
+.time {
+  text-align: right;
+  font-size: small;
+  color: rgb(82, 86, 91);
+}
+
+.name {
+  color: rgb(122, 126, 131);
+}
+
+.block_text_center {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.block_text_center h2,
+.block_text_center p {
+  color: #eee;
+  font-size: 5vh;
+}
+
+.block_text_center p {
+  font-size: 3vh;
+}
+
+.admin {
+  font-size: 2vh !important;
+}
+
+a:visited {
+  color: rgb(102, 106, 111);
+  text-decoration: none;
+}
+
+a {
+  color: rgb(122, 126, 131);
+  text-decoration: none;
+}
+
+.aka {
+  border-radius: 4px;
+  background-color: rgb(28, 29, 31);
+  color: rgb(122, 126, 131);
+  padding: 0 5px;
+  font-size: 70%;
+}
+
+.aka_name {
+    font-size: 80%;
+}
+
+.startMessages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.startMessages p {
+    color: rgb(82, 86, 91);
+    background-color: rgb(38, 39, 41); 
+    padding: 5px 10px;
+    border-radius: 10px;
+}

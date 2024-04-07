@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <title>DChat</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}">
+    <link rel="stylesheet" href="{% static "/css/style.css" %}"/>
+  </head>
+
+  <body>
+    <div class="wrapper" style="width: 100%"><h1>Локальный чат</h1><button onclick="window.location.href='/u'" id="theme">Выйти</button></div>
+    <iframe seamless src="/chat/raw" height="100">
+
+    </iframe>
+
+    <div class="wrapper">
+      <form method="post" id="sendMessage" >
+        {{ message_form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Отправить</button>
+    </form>   
+    </div>
+  </body>
+  <script src="{% static "/js/reloader.js" %}"></script>
+
+</html>
+
+<!-- 
+<form id="signin" method="" action="" autocomplete="off">
+    <input type="text" id="user" name="user" placeholder="username" />
+    <input type="password" id="pass" name="pass" placeholder="password" />
+    <button type="submit">&#xf0da;</button>
+    <p>forgot your password? <a href="#">click here</a></p>
+</form> 
+-->

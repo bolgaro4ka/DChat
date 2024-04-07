@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <title>DChat</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}">
+    <link rel="stylesheet" href="{% static "/css/style.css" %}"/>
+  </head>
+
+  <body>
+    <div class="startMessages"><p>Это начало славной переписки</p></div>
+    {% for item in messages%}
+        {% if item.user == user%}
+                <div class="message from_me" id="{{forloop.counter}}">
+                    <p class="name">{{item.user.username}} <span class="aka">АКА</span> <span class="akaName">{{item.user.first_name}} {{item.user.last_name}}</span></p>
+                    <p class="text">{{item.content | safe }}</p>
+                    <p class="time">{{item.timestamp}}</p>
+                </div>
+        {% else %}
+            <div class="message from_nn" id="{{forloop.counter}}">
+              <p class="name">{{item.user.username}} <span class="aka">АКА</span> <span class="akaName">{{item.user.first_name}} {{item.user.last_name}}</span></p>
+              <p class="text">{{item.content | safe }}</p>
+              <p class="time">{{item.timestamp}}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+    <script>
+      function scrollDown() {
+        height=window.innerHeight*7;
+        console.log(height);
+        fetch('/api').then(response => response.json()).then(data => {
+            document.getElementById(data['messages']).scrollIntoView({behavior: "smooth"})})
+        }
+    
+    window.onload=scrollDown()
+    fetch('/api').then(response => response.json()).then(data => {
+      messages = (data['messages'])
+    })
+    setInterval(function() {
+      fetch('/api').then(response => response.json()).then(data => {
+          messagesNew = data['messages']
+          if (messagesNew != messages) {
+              messages = messagesNew
+              console.log('reload')
+              window.location.reload()
+              scrollDown()
+  }})}, 5000)
+    </script>
+  </body>
+</html>
+

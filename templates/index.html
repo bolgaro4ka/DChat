@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <title>DChat</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}">
+    <link rel="stylesheet" href="{% static "/css/style.css" %}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <style>
+        * {font-family: "Anonymous Pro"}
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper_normal block_text_center">
+        {% if user.is_authenticated %}<button onclick="window.location.href='/u'" id="theme">Выйти</button>{% endif %}
+        <h2>🎉Добро пожаловать!🎉</h2>
+        <p>Этот чат доступен только в этой локальной сети. {% if user.is_authenticated %} Вы авторизованы! Можете перейти в <a href="/chat">чат</a>.{% else %}Чтобы воспользовать <a href="/auth">войдите</a> или <a href="/register">зарегистрируйтесь</a>! {% endif %}</p>
+
+        <p class="admin">А если вы администратор, то добро пожаловать в <a href="/admin">админ-панель</a></p>
+    </div>
+  </body>
+</html>
+
+<!-- 
+<form id="signin" method="" action="" autocomplete="off">
+    <input type="text" id="user" name="user" placeholder="username" />
+    <input type="password" id="pass" name="pass" placeholder="password" />
+    <button type="submit">&#xf0da;</button>
+    <p>forgot your password? <a href="#">click here</a></p>
+</form> 
+-->

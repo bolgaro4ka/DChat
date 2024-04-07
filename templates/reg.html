@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="UTF-8" />
+    <title>DChat</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}">
+    <link rel="stylesheet" href="{% static "/css/style.css" %}"/>
+  </head>
+
+  <body>
+    <div class="wrapper"><h1>Регистрация нового аккаунта</h1></div>
+    <div class="wrapper">
+      <form method="post" id="signin" >
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit">Зарегистрировать</button>
+        <p id="forSignIn">Вспомнили пароль? <a href="/auth">тык</a></p>
+    </form>   
+    </div>
+  </body>
+</html>
+
